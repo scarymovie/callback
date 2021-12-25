@@ -28,6 +28,7 @@
                                 <td>{{$order->user->name}}</td>
                                 <td>{{$order->user->email}}</td>
                                 <td>{{$order->created_at}}</td>
+                                <td><a href="{{$order->getFirstMediaUrl('file')}}">ссылка</a></td>
                             </tr>
                         @endforeach
                         </tbody>

@@ -41,6 +41,11 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'media' => [
+            'driver' => 'local',
+            'root'   => storage_path('app/public/media'),
+            'url'    => env('APP_URL').'/storage/media',
+        ],
 
         's3' => [
             'driver' => 's3',
@@ -69,5 +74,7 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
+
+
 
 ];

@@ -27,6 +27,7 @@ class OrderStoreRequest extends FormRequest
         return [
             'topic' => 'required',
             'description' => 'required',
+            'file' => 'file'
         ];
     }
 }
