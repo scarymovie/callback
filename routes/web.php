@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\manager\ManagerController;
+use App\Http\Controllers\User\OrderController as OrderControllerAlias;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +23,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::resource('order', OrderControllerAlias::class)
+    ->middleware(['auth', 'role:user']);
+
+Route::resource('list', ManagerController::class)
+    ->middleware(['auth', 'role:manager']);
+
+
+require __DIR__ . '/auth.php';
