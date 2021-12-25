@@ -15,7 +15,8 @@ class Order extends Model implements HasMedia
     protected $fillable = [
         'topic',
         'description',
-        'file'
+        'file',
+        'status'
     ];
 
     public function user(){

@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('topic');
             $table->string('description');
-            $table->string('status', '1')->default('0');
+            $table->boolean('isActive')->default(0);
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
